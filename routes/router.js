@@ -168,14 +168,14 @@ router.post("/sendpasswordlink",async(req,res)=>{
             const mailOptions = {
                 from:process.env.EMAIL,
                 to:email,
-                subject:"Sending Email For password Reset",
+                subject:"Sending Email For password Reset from MOHAN Application",
                 text:`This Link Valid For 2 MINUTES http://localhost:3001/forgotpassword/${userfind.id}/${setusertoken.verifytoken}`
             }
 
             transporter.sendMail(mailOptions,(error,info)=>{
                 if(error){
                     console.log("error",error);
-                    res.status(401).json({status:401,message:"email not send"})
+                    res.status(401).json({status:401,message:"Email not send"})
                 }else{
                     console.log("Email sent",info.response);
                     res.status(201).json({status:201,message:"Email sent Succsfully"})
