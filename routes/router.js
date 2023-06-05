@@ -90,7 +90,7 @@ router.post("/login", async (req, res) => {
                 // cookiegenerate
                 res.cookie("usercookie",token,{
                     expires:new Date(Date.now()+9000000),
-                    httpOnly:true
+                    //httpOnly:true
                 });
 
                 const result = {
